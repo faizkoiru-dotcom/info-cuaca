@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Cuaca & Jadwal Sholat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Info Cuaca & Jadwal Sholat</h1>
+        
+        <div class="search-box">
+            <input type="text" id="cityInput" placeholder="Masukkan nama kota (contoh: Jakarta)...">
+            <button id="searchBtn">Cari</button>
+        </div>
+
+        <div class="result-container">
+            <div class="card">
+                <h2>Cuaca Saat Ini</h2>
+                <div id="weatherResult" class="result-content">
+                    <p>Silakan cari kota terlebih dahulu.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Jadwal Sholat Hari Ini</h2>
+                <div id="prayerResult" class="result-content">
+                    <p>Silakan cari kota terlebih dahulu.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

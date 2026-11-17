@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Lapisan warna gelap semi-transparan di atas gambar agar teks tetap terbaca jelas */
+    background: linear-gradient(rgba(10, 15, 30, 0.75), rgba(15, 25, 45, 0.75)), 
+                url('https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80&w=1920&auto=format&fit=crop');
+    
+    /* Pengaturan agar gambar menutupi seluruh layar dengan pas */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 850px;
+    background: hsla(60, 3%, 88%, 0.904);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 35px;
+    border-radius: 24px;
+    box-shadow: 0 25px 50px hwb(0 83% 4% / 0.6);
+    border: 1px solid hsla(180, 75%, 2%, 0.882);
+    position: relative;
+    margin-top: 30px;
+}
+
+/* Efek Bulan Sabit Gantung di Atas Dashboard */
+.container::before {
+    content: "☪";
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 42px;
+    color: #fbbf24;
+    text-shadow: 0 0 15px rgba(251, 191, 36, 0.6);
+    background: #0b192c;
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px solid rgba(251, 191, 36, 0.4);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.search-box {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 12px;
+    font-size: 16px;
+    color: #ffffff;
+    outline: none;
+}
+
+.search-box input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.search-box input:focus {
+    border-color: #38bdf8;
+    background: rgba(255, 255, 255, 0.22);
+}
+
+.search-box button {
+    padding: 14px 28px;
+    background: #38bdf8;
+    color: #0f172a;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.search-box button:hover {
+    transform: translateY(-2px);
+    background: #7dd3fc;
+}
+
+.result-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.card {
+    background: #ffffff;
+    padding: 22px;
+    border-radius: 16px;
+    border-left: 6px solid #0284c7;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card h2 {
+    font-size: 17px;
+    margin-bottom: 15px;
+    color: #0f172a;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 8px;
+}
+
+.result-content p {
+    margin: 10px 0;
+    font-size: 15px;
+    color: #334155;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed #e2e8f0;
+    padding-bottom: 6px;
+}
+
+/* Ikon & Status Cuaca di Bawah Kecepatan Angin */
+.weather-status {
+    text-align: center;
+    margin-top: 15px;
+    padding-top: 12px;
+}
+
+.weather-icon {
+    font-size: 42px;
+    margin-bottom: 4px;
+}
+
+.weather-desc {
+    font-size: 15px;
+    font-weight: 600;
+    color: #0284c7;
+}
+
+@media (max-width: 600px) {
+    .result-container {
+        grid-template-columns: 1fr;
+    }
+}
